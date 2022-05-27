@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Image(models.Model):
-    image = models.ImageField(upload_to = '')
+    image = models.ImageField(upload_to = 'uploads')
     name = models.CharField(max_length =50)
     description = models.TextField(max_length =200, blank=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
@@ -23,7 +23,7 @@ class Image(models.Model):
     def search_image(category):
         category.search_image()
     
-    
+
 
 
 class Location(models.Model):
