@@ -23,3 +23,16 @@ def imageView(request):
 def uploadok(request):
     return HttpResponse(' upload successful')
 
+def search_images(request):
+
+    if 'image' in request.GET and request.GET["image"]:
+        category = request.GET.get("image")
+        searched_images = Image.objects.search_image(category)
+        message = f"{category}"
+
+        return render(request, 'search.html',{"message":message,"images": searched_images})
+
+    else:
+        message = "You haven't searched for any category"
+        return render(request, 'search.html',{"message":message})
+
