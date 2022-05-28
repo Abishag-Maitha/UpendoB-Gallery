@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+    {% if images %}{%for image in images%}
+    <p>
+        <img src="{{image.image.url}}" alt="" class="h-50 w-50"> {{image.name}}{{image.description}}
+    </p> {% endfor %} {% else %}
+    <p>No items to display</p>
+    {% endif %}
+</div> {% endblock %}
