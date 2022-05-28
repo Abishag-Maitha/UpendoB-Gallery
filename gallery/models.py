@@ -1,6 +1,13 @@
 from django.db import models
 
-# Create your models here.
+   
+class Location(models.Model):
+    name = models.CharField(max_length=30)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+
 class Image(models.Model):
     image = models.ImageField(upload_to = 'uploads')
     name = models.CharField(max_length =50)
@@ -17,18 +24,22 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
-    def update_image(self):
-        self.update_image()
+    @classmethod
+    def update_image(cls,id,value):
+        cls.objects.filter(id=id).update(image=value)
+   
 
-    def search_image(category):
-        category.search_image()
-    
+    @classmethod
+    def search_image(cls,category):
+        images=cls.objects.filter(category__name__icontains=category).all()
+        return images
 
+    @classmethod
+    def get_image_by_id(cls,id):
+        image=cls.objects.filter(id=id).first()
+        return image
 
-
-class Location(models.Model):
-    name = models.CharField(max_length=30)
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=30)
+    @classmethod
+    def filter_by_location(cls,location):
+        image_location=Image.objects.filter(location__name=location).all()
+        return image_location
