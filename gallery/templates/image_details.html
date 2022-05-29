@@ -3,7 +3,9 @@
 <div class="row">
 
     <div class="card">
-        <img src="{{image.image.url}}" alt="" class="h-50 w-50"> {{image.name}}{{image.description}}
+        <img src="{{image.image.url}}" alt="" class="h-50 w-50">
+        <p>{{image.name}} </p>
+        <p>{{image.description}}</p>
 
         <a href="{% url 'delete_image' id=image.id %}" class="btn btn-primary"><i class="fa-solid fa-trash-can "></i></a>
         <a href="{% url 'update_image' id=image.id %}" class="btn btn-primary">Update</a>

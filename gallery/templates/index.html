@@ -4,16 +4,16 @@
         <div class="category">
             <form action="{% url 'category' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="category" placeholder="add category" class="p-1">
-                <button type="submit" class="btn btn-sm btn-warning">Add<i class="fa-solid fa-plus"></i></button>
+                <input type="text" name="category" placeholder="Add new category" class="p-1 fs-4">
+                <button type="submit" class="btn btn-sm btn-info fs-4">Add<i class="fa-solid fa-plus"></i></button>
 
             </form>
         </div>
         <div class="location">
             <form action="{% url 'location' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="location" placeholder="add location" class="p-1">
-                <button type=" submit " class="btn btn-sm btn-warning">Add<i class="fa-solid fa-plus "></i></button>
+                <input type="text" name="location" placeholder="Add new location" class="p-1 fs-4">
+                <button type=" submit " class="btn btn-sm btn-info fs-4">Add<i class="fa-solid fa-plus "></i></button>
 
             </form>
         </div>
