@@ -36,3 +36,6 @@ def search_images(request):
         message = "You haven't searched for any category"
         return render(request, 'search.html',{"message":message})
 
+def view_image(request,id):
+    image = Image.objects.filter(id=id).first()
+    return render(request, 'image_details.html',{'image':image})
