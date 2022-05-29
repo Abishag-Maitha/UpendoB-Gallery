@@ -7,10 +7,10 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
-    def save_image(self):
+    def save_location(self):
         self.save()
     
-    def delete_image(self):
+    def delete_location(self):
         self.delete()
 
     @classmethod
@@ -24,10 +24,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    def save_image(self):
+    def save_category(self):
         self.save()
     
-    def delete_image(self):
+    def delete_category(self):
         self.delete()
     
     @classmethod
