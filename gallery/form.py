@@ -1,4 +1,3 @@
-from django import forms
 from .models import Image
 from django.forms import ModelForm
   
