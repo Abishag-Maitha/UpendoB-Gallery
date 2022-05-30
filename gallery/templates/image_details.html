@@ -1,15 +1,30 @@
 {% extends 'base.html' %} {% block content %}
+<style>
+    .image_details {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    
+    .column {
+        float: left;
+        width: 50%;
+        padding: 5px;
+    }
+</style>
+<div class="row  image_details">
 
-<div class="row">
-
-    <div class="card">
-        <img src="{{image.image.url}}" alt="" class="h-50 w-50">
-        <p>{{image.name}} </p>
-        <p>{{image.description}}</p>
-
-        <a href="{% url 'delete_image' id=image.id %}" class="btn btn-primary"><i class="fa-solid fa-trash-can "></i></a>
-        <a href="{% url 'update_image' id=image.id %}" class="btn btn-primary">Update</a>
-
+    <div class="column">
+        <img src="{{image.image.url}} " alt=" " class="fs-1 ms-5 img-rounded" style="width: 300px; aspect-ratio: 1;">
+        <a href="{% url 'delete_image' id=image.id %} " class="btn btn-info mb-2 p-3 mt-4 me-2 fw-bold fs-5 ms-5" style="width: 100px; "><i class="fa-solid fa-trash-can "></i></a>
+        <a href="{% url 'update_image' id=image.id %} " class="btn btn-info p-3 mt-4 fw-bold fs-5 ms-5" style="width: 100px; ">Update</a>
+    </div>
+    <div class="column">
+        <p class="fs-3 ms-5 ">Caption: {{image.name}} </p>
+        <p class="fs-3 ms-5 ">Desciption: {{image.description}}</p>
+        <p class="fs-3 ms-5 ">Location: {{image.location}}</p>
+        <p class="fs-3 ms-5 ">Category: {{image.category}}</p>
     </div>
 
 </div>
