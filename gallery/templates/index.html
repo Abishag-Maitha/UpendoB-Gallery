@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-<style></style>
+<style>
+    body {
+        background-color: #E5E4E2;
+    }
+</style>
 <div class="">
     <div class="forms d-flex justify-content-around">
         <div class="category">
@@ -21,13 +25,13 @@
     </div>
 </div>
 
-<div class="container" style="display: flex; justify-content: center;">
-    <div class="card" style="width: 18rem; margin:8px;">
+<div class="container mx-auto">
+    <div class="d-flex ">
         {% if images %}{%for image in images%}
-        <img src="{{image.image.url}} " class="" alt=" ... ">
-        <div class="card-body ">
-            <h5 class="card-title ">{{image.name}}</h5>
-            <a href="{% url 'view_image' id=image.id %} " class="btn btn-info ">View More</a>
+        <img src="{{image.image.url}} " class="w-25 img-rounded" alt=" ">
+        <div class="body ">
+            <h5 class="title ms-3 me-5 fs-4"><strong>Caption:</strong> {{image.name}}</h5>
+            <a href="{% url 'view_image' id=image.id %} " class="btn btn-info ms-3 me-5 fw-bold fs-4">View More</a>
         </div>
         {% endfor %} {% else %}
         <p>No items to display</p>

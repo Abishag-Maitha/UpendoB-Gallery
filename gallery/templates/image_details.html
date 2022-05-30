@@ -21,10 +21,10 @@
         <a href="{% url 'update_image' id=image.id %} " class="btn btn-info p-3 mt-4 fw-bold fs-5 ms-5" style="width: 100px; ">Update</a>
     </div>
     <div class="column">
-        <p class="fs-3 ms-5 ">Caption: {{image.name}} </p>
-        <p class="fs-3 ms-5 ">Desciption: {{image.description}}</p>
-        <p class="fs-3 ms-5 ">Location: {{image.location}}</p>
-        <p class="fs-3 ms-5 ">Category: {{image.category}}</p>
+        <p class="fs-3 ms-5 "> <strong>Caption:</strong> {{image.name}} </p>
+        <p class="fs-3 ms-5 "> <strong>Description:</strong> {{image.description}}</p>
+        <p class="fs-3 ms-5 "> <strong>Location:</strong> {{image.location}}</p>
+        <p class="fs-3 ms-5 "> <strong>Category:</strong> {{image.category}}</p>
     </div>
 
 </div>
