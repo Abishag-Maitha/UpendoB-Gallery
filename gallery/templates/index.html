@@ -38,15 +38,14 @@
             <div class="col-3 card border-0 m-4 p-0 ">
                 <img src="{{image.image.url}} " class=" img-rounded" alt=" ">
                 <div class="">
-                    <h5 class="title ms-3 me-5 fs-4"><strong>Caption:</strong> {{image.name}}</h5>
-                    <a href="{% url 'view_image' id=image.id %} " class="btn btn-info ms-3 me-5 fw-bold fs-4">View More</a>
+                    <h5 class="title ms-3 me-5 fs-4 p-4"><strong>Caption:</strong> {{image.name}}</h5>
+                    <a href="{% url 'view_image' id=image.id %} " class="btn btn-danger ms-3 me-5">View More</a>
+                    <button type="button" class="btn btn-danger" onclick="copyImageLink('{{image.image.url}}'); 
+                    myFunction()" id="copyImageLink"> Copy Link</button>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" onclick="copyImageLink('{{image.image.url}}'); 
-                        myFunction()" id="copyImageLink"> Copy Link</button>
-                    </div>
                 </div>
             </div>
+
             {% endfor %} </div>
         {% else %}
         <p>No items to display</p>
