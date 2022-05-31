@@ -24,6 +24,22 @@
 
 <body>
     {% include "navbar.html" %}{% block content %}{% endblock %}
+    <script type="text/javascript">
+        function copyImageLink(data) {
+            navigator.clipboard.writeText(window.location.origin + data)
+        }
+        function myFunction() {
+            alert('Link Copied! You can go ahead and paste it ')
+        }
+    </script>
+    <!-- <script>
+        function copy() {
+            var textCopied = document.getElementById("content").value;
+            navigator.clipboard.writeText(textCopied).then(() => {
+                alert("Copied to clipboard");
+            });
+        }
+    </script> -->
 </body>
 
 </html>
