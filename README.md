@@ -4,7 +4,7 @@
 Abishag Maitha
 
 ## Description
-A web app that allows users to view uploaded photos. A user can search photos by different categories, click and view a all the details of a  single photo 
+A web app that allows users to view uploaded photos. A user can search photos by different categories, click and view a all the details of a  single photo. A user can also image copy link and share with friends
 
 ## Project setup instructions
 * Fork the Repo from my github account: https://github.com/Abishag-Maitha/UpendoB-Gallery
